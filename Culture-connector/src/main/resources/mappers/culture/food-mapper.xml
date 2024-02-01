@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<!-- Dao를 Mapper Interface로 대체 할 예정, namespace=Class의 풀네임 선언 필요 -->
+<mapper namespace="com.multi.mvc.culture.model.mapper.FoodMapper">
+	<resultMap type="Food" id="FoodResultMap">
+		<result property="cfno" column="CFNO"/> 
+		<result property="contentId" column="CONTENTID"/> 
+		<result property="contentTypeId" column="CONTENTTYPED"/> 
+		<result property="homePage" column="HOMEPAGE"/> 
+		<result property="tel" column="TEL"/> 
+		<result property="title" column="TITLE"/> 
+		<result property="firstImage" column="FIRSTIMAGE"/> 
+		<result property="firstImage2" column="FIRSTIMAGE2"/> 
+		<result property="areaCode" column="AREACODE"/> 
+		<result property="siGunGuCode" column="SIGUNGUCODE"/> 
+		<result property="cat1" column="CAT1"/> 
+		<result property="cat2" column="CAT2"/> 
+		<result property="cat3" column="CAT3"/> 
+		<result property="addr1" column="ADDR1"/> 
+		<result property="addr2" column="ADDR2"/> 
+		<result property="zipCode" column="ZIPCODE"/> 
+		<result property="mapX" column="MAPX"/> 
+		<result property="mapY" column="MAPY"/> 
+		<result property="overView" column="OVERVIEW"/> 
+		<result property="mlevel" column="MLEVEL"/> 
+		<result property="chkcreditcardFood" column="CHKCREDITCARDFOOD"/> 
+		<result property="discountinfoFood" column="DISCOUNTINFOFOOD"/> 
+		<result property="firstMenu" column="FIRSTMENU"/> 
+		<result property="infocenterFood" column="INFOCENTERFOOD"/> 
+		<result property="kidsFacility" column="KIDSFACILITY"/> 
+		<result property="opendateFood" column="OPENDATEFOOD"/> 
+		<result property="opentimeFood" column="OPENTIMEFOOD"/> 
+		<result property="packing" column="PACKING"/> 
+		<result property="parkingFood" column="PARKINGFOOD"/> 
+		<result property="reservationFood" column="RESERVATIONFOOD"/> 
+		<result property="restdateFood" column="RESTDATEFOOD"/> 
+		<result property="scaleFood" column="SCALEFOOD"/> 
+		<result property="seat" column="SEAT"/> 
+		<result property="smoking" column="SMOKING"/> 
+		<result property="treatMenu" column="TREATMENU"/> 
+		<result property="lcnsNo" column="LCNSNO"/> 
+		<result property="originImgurl1" column="ORIGINIMGURL1"/> 
+		<result property="originImgurl2" column="ORIGINIMGURL2"/> 
+		<result property="smallImgurl" column="SMALLIMGURL"/> 
+<!-- 		<result property="status" column="STATUS" /> -->
+
+
+	</resultMap>
+	
+		
+		
+	<insert id="createTableFood">
+			CREATE TABLE IF NOT EXISTS FOOD (
+			CFNO INT AUTO_INCREMENT, 
+		    CONTENTID INT,
+		    CONTENTTYPEID INT,
+		    HOMEPAGE VARCHAR(600),
+		    TEL VARCHAR(100),
+		    TITLE VARCHAR(200),
+		    FIRSTIMAGE VARCHAR(200),
+		    FIRSTIMAGE2 VARCHAR(200),
+		    AREACODE VARCHAR(100),
+		    SIGUNGUCODE VARCHAR(100),
+		    CAT1 VARCHAR(100),
+		    CAT2 VARCHAR(100),
+		    CAT3 VARCHAR(100),
+		    ADDR1 VARCHAR(100),
+		    ADDR2 VARCHAR(100),
+		    ZIPCODE VARCHAR(100),
+		    MAPX VARCHAR(100),
+		    MAPY VARCHAR(100),
+		    OVERVIEW VARCHAR(10000),
+		    MLEVEL VARCHAR(100),
+		    CHKCREDITCARDFOOD VARCHAR(100),
+		    DISCOUNTINFOFOOD VARCHAR(100),
+		    FIRSTMENU VARCHAR(100),
+		    INFOCENTERFOOD VARCHAR(100),
+		    KIDSFACILITY VARCHAR(100),
+		    OPENDATEFOOD DATE,
+		    OPENTIMEFOOD VARCHAR(100),
+		    PACKING VARCHAR(100),
+		    PARKINGFOOD VARCHAR(100),
+		    RESERVATIONFOOD VARCHAR(100),
+		    RESTDATEFOOD VARCHAR(100),
+		    SCALEFOOD VARCHAR(100),
+		    SEAT VARCHAR(100),
+		    SMOKING VARCHAR(100),
+		    TREATMENU VARCHAR(100),
+		    LCNSNO VARCHAR(100),
+		    ORIGINIMGURL1 TEXT,
+		    ORIGINIMGURL2 TEXT,
+		    SMALLIMGURL VARCHAR(100),
+<!--    		 	STATUS VARCHAR(1) DEFAULT 'Y' CHECK (STATUS IN('Y', 'N')), -->
+		    CONSTRAINT PK_FOOD PRIMARY KEY(CFNO)
+		);
+				
+	</insert>
+	
+	
+	
+	<insert id="insertFood" parameterType="java.util.List">
+    INSERT INTO FOOD
+    (
+   		CFNO, CONTENTID, CONTENTTYPEID, HOMEPAGE, TEL, TITLE, 
+   		FIRSTIMAGE, FIRSTIMAGE2, AREACODE, SIGUNGUCODE, CAT1, 
+   		CAT2, CAT3, ADDR1, ADDR2, ZIPCODE, 
+   		MAPX, MAPY, OVERVIEW, MLEVEL, CHKCREDITCARDFOOD, 
+   		DISCOUNTINFOFOOD, FIRSTMENU, INFOCENTERFOOD, KIDSFACILITY, OPENDATEFOOD, 
+   		OPENTIMEFOOD, PACKING, PARKINGFOOD, RESERVATIONFOOD, RESTDATEFOOD, 
+   		SCALEFOOD, SEAT, SMOKING, TREATMENU, LCNSNO, 
+   		ORIGINIMGURL1, ORIGINIMGURL2, SMALLIMGURL
+    )
+    VALUES
+    <foreach collection="list" index="index" item="item" separator=","> 
+    
+  	(
+  		0, #{item.contentId}, #{item.contentTypeId}, #{item.homePage}, #{item.tel}, #{item.title},
+  		#{item.firstImage}, #{item.firstImage2}, #{item.areaCode}, #{item.siGunGuCode}, #{item.cat1},
+  		#{item.cat2}, #{item.cat3}, #{item.addr1}, #{item.addr2}, #{item.zipCode},
+  		#{item.mapX}, #{item.mapY}, #{item.overView}, #{item.mlevel}, #{item.chkcreditcardFood},
+  		#{item.discountinfoFood}, #{item.firstMenu}, #{item.infocenterFood}, #{item.kidsFacility}, #{item.opendateFood},
+  		#{item.opentimeFood}, #{item.packing}, #{item.parkingFood}, #{item.reservationFood}, #{item.restdateFood},
+  		#{item.scaleFood}, #{item.seat}, #{item.smoking}, #{item.treatMenu}, #{item.lcnsNo}, 
+  		#{item.originImgurl1}, #{item.originImgurl2}, #{item.smallImgurl}
+  		
+  		)
+	</foreach>
+	
+	</insert>
+	
+<!-- 	<insert id="insertFoodSample" parameterType="java.util.List"> -->
+<!--     INSERT INTO FOOD -->
+<!--     ( -->
+<!--    		CONTENTID, CONTENTTYPEID, HOMEPAGE, TEL, TITLE,  -->
+<!--    		FIRSTIMAGE, FIRSTIMAGE2, AREACODE, SIGUNGUCODE, CAT1,  -->
+<!--    		CAT2, CAT3, ADDR1, ADDR2, ZIPCODE,  -->
+<!--    		MAPX, MAPY, OVERVIEW, MLEVEL, CHKCREDITCARDFOOD,  -->
+<!--    		DISCOUNTINFOFOOD, FIRSTMENU, INFOCENTERFOOD, KIDSFACILITY, OPENDATEFOOD,  -->
+<!--    		OPENTIMEFOOD, PACKING, PARKINGFOOD, RESERVATIONFOOD, RESTDATEFOOD,  -->
+<!--    		SCALEFOOD, SEAT, SMOKING, TREATMENU, LCNSNO -->
+<!--     ) -->
+
+<!--     VALUES -->
+    
+<!--   	( -->
+<!--   	     VALUES (301, 3, 'http://food.com', '02-5555-6666', '음식점 이름', -->
+<!-- 	    'food_image1.jpg', 'food_image2.jpg', '102', '202', 'FOOD1', -->
+<!-- 	    'FOOD2', 'FOOD3', '대구시', '중구', '34567', -->
+<!-- 	    '35.8765', '128.6543', '음식점에 대한 설명', '3', '가능', -->
+<!-- 	    '할인 정보', '대표 메뉴', '정보 센터', '있음', '2024-02-01', -->
+<!-- 	    '11:00 - 21:00', '포장 가능', '있음', '예약 가능', '화요일', -->
+<!-- 	    '중간', '50', '금연', '메뉴 목록', '123-4567'); -->
+<!--   		) -->
+	
+<!-- 	</insert> -->
+	
+	
+	
+	<!-- 상세보기 용도, 모든 인자를 가져와야한다. -->
+	<select id="selectFoodByNo" parameterType="int" resultMap="FoodResultMap">
+		SELECT * FROM FOOD 
+		WHERE CFNO = #{cfno}
+	</select>
+	
+	<select id="selectFoodSample" parameterType="FoodParam" resultMap="FoodResultMap">
+		SELECT * FROM FOOD ORDER BY CFNO
+	</select>
+	
+	
+	<!--검색용도  -->
+	<select id="selectFoodList" parameterType="FoodParam" resultMap="FoodResultMap">
+		SELECT  *
+		FROM FOOD 
+		WHERE 1=1
+			<if test="localtypeList != null">
+				 AND  
+				<foreach  item="item" collection="localtypeList" open="(" separator="or" close=")">  
+				    ADDR1 LIKE '%${item}%'
+				</foreach>
+				
+			</if>
+			<if test="foodtypeList != null">
+				 AND  
+				<foreach  item="item" collection="foodtypeList" open="(" separator="or" close=")">
+				    CAT3 LIKE '%${item}%' <!-- value값이 = item이됨 -->
+				</foreach>
+				
+			</if>
+			<if test="searchValue != null"> <!-- 체크박스 타입이 addr1 (지역) 이면 ADDR1에서 검색 ? -->
+			    AND TITLE LIKE '%${searchValue}%' 
+			</if>
+
+<!-- 		SELECT  TITLE, ADDR1, FIRSTIMAGE, FIRSTMENU, CAT3, CONTENTTYPEID -->
+<!-- 		FROM FOOD F -->
+<!-- 		JOIN FOOD_CATEGORY C ON (F.CONTENTTYPEID = C.CONTENTTYPEID) -->
+<!-- 		WHERE 1=1 -->
+<!-- 		    AND F.CONTENTTYPEID IN (39) -->
+<!-- 		    AND F.ADDR1 LIKE '%서울%'  -->
+<!-- 		    AND F.CAT3 LIKE '%a%'  -->
+<!-- 		    AND F.TITLE LIKE '%test%'  -->
+<!-- 		ORDER BY C.LEVEL, B.BNO DESC LIMIT 12 OFFSET 0; -->
+<!-- 			<if test="searchFoodValue == 'search'"> 체크박스 타입이 addr1 (지역) 이면 ADDR1에서 검색 ? -->
+<!-- 			    AND ADDR1 LIKE '%${searchName}%'  -->
+<!-- 			</if> -->
+<!-- 			<if test="searchFoodType == 'cat3'"> 체크박스 타입이 cat3 (음식종류) 이면 CAT3에서 검색 ? -->
+<!-- 			    AND CAT3 LIKE '%${searchName}%'  -->
+<!-- 			</if> -->
+<!-- 			<if test="searchFoodType == null"> 체크박스 타입이 안찍히면 이면 TITLE에서 검색 ? -->
+<!-- 			    AND TITLE LIKE '%${searchName}%'  -->
+<!-- 			</if> -->
+<!-- 			<if test="searchFoodType == 'title'"> 
+			    AND B.TITLE LIKE '%${searchValue}%'  
+			</if>
+ 			<if test="searchFoodType == 'content'"> 
+ 			    AND B.CONTENT LIKE '%${searchValue}%'  
+ 			</if> 
+ 		ORDER BY C.LEVEL, B.BNO  -->
+		ORDER BY CFNO DESC LIMIT ${limit} OFFSET ${offset};
+	</select>
+	
+	<select id="selectFoodCount" parameterType="FoodParam" resultType="int">
+		SELECT  COUNT(*)
+		FROM FOOD 
+		WHERE 1=1
+			<if test="localtypeList != null">
+				 AND  
+				<foreach  item="item" collection="localtypeList" open="(" separator="or" close=")">   <!-- 로컬타입스(=>로컬리스트)가 널이 아니면, foreach. item(value)=서울, 경기 등등 -->
+				    ADDR1 LIKE '%${item}%'
+				</foreach>
+				
+			</if>
+			<if test="foodtypeList != null">
+				 AND  
+				<foreach  item="item" collection="foodtypeList" open="(" separator="or" close=")">
+				    CAT3 LIKE '%${item}%'
+				</foreach>
+				
+			</if>
+			<if test="searchValue != null"> <!-- name serchavalue가 null이 아니면 -->
+			    AND TITLE LIKE '%${searchValue}%' 
+			</if>
+<!-- 			<if test="searchValue == 'search'"> 체크박스 타입이 addr1 (지역) 이면 ADDR1에서 검색 ? -->
+<!-- 			    AND TITLE LIKE '%${searchValue}%'  -->
+<!-- 			</if> -->
+<!-- 		SELECT  TITLE, ADDR1, FIRSTIMAGE, FIRSTMENU, CAT3, CONTENTTYPEID -->
+<!-- 		FROM FOOD F -->
+<!-- 		JOIN FOOD_CATEGORY C ON (F.CONTENTTYPEID = C.CONTENTTYPEID) -->
+<!-- 		WHERE 1=1 -->
+<!-- 		    AND F.CONTENTTYPEID IN (39) -->
+<!-- 		    AND F.ADDR1 LIKE '%서울%'  -->
+<!-- 		    AND F.CAT3 LIKE '%a%'  -->
+<!-- 		    AND F.TITLE LIKE '%test%'  -->
+<!-- 		ORDER BY C.LEVEL, B.BNO DESC LIMIT 12 OFFSET 0; -->
+<!-- 			<if test="searchFoodValue == 'search'"> 체크박스 타입이 addr1 (지역) 이면 ADDR1에서 검색 ? -->
+<!-- 			    AND ADDR1 LIKE '%${searchName}%'  -->
+<!-- 			</if> -->
+<!-- 			<if test="searchFoodType == 'cat3'"> 체크박스 타입이 cat3 (음식종류) 이면 CAT3에서 검색 ? -->
+<!-- 			    AND CAT3 LIKE '%${searchName}%'  -->
+<!-- 			</if> -->
+<!-- 			<if test="searchFoodType == null"> 체크박스 타입이 안찍히면 이면 TITLE에서 검색 ? -->
+<!-- 			    AND TITLE LIKE '%${searchName}%'  -->
+<!-- 			</if> -->
+<!-- 			<if test="searchFoodType == 'title'"> 
+			    AND B.TITLE LIKE '%${searchValue}%'  
+			</if>
+ 			<if test="searchFoodType == 'content'"> 
+ 			    AND B.CONTENT LIKE '%${searchValue}%'  
+ 			</if> 
+ 		ORDER BY C.LEVEL, B.BNO  -->
+	</select>
+	
+</mapper>
