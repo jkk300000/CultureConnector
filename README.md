@@ -13,6 +13,8 @@
 
 사용언어 및 기술: JAVA 17, MYSQL, MYBATIS, CSS, JAVASCRIPT, LOMBOK, SPRING FRAMEWORK, BOOTSTRAP, JQUERY, TOMCAT, ECLIPSE 등
 
+OPEN API : 카카오맵 API, 카카오 API, TOUR API 등
+
 프로젝트 내 역할: 
                   프론트/백엔드/DB
 
