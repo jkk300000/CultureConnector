@@ -13,12 +13,33 @@
 
 사용언어 및 기술: JAVA 17, MYSQL, MYBATIS, CSS, JAVASCRIPT, LOMBOK, SPRING FRAMEWORK, BOOTSTRAP, JQUERY, TOMCAT, ECLIPSE 등
 
-프로젝트 내 역할 및 구현 기능: 
+프로젝트 내 역할: 
                   프론트/백엔드/DB
-                  
+
+프로젝트 내 구현 기능:
                   1.'문화테마' 페이지 및 상세페이지 프론트/백엔드 기능 구현, 
                   2. 체크박스 검색 기능
                   3. 카카오맵 api를 이용한 주소지 위치 표시 기능, 카카오 api를 이용한 공유 기능, 카카오 로그인 기능
                   4. 마이페이지(북마크 기능) 구현
-                  5. 문화테마 데이터를 Tour API로부터 파싱
-                  6. 문화테마 관련 DB 테이블 생성 및 SQL 작성
+                 
+
+                    작성 코드:
+
+                    java/com/multi/mvc/culture/controller/CultureController.java
+                    
+                    java/com/multi/mvc/culture/model/mapper/CultureMapper.java
+                    
+                    java/com/multi/mvc/culture/model/service/Service/CultureService.java
+                    
+                    java/com/multi/mvc/culture/model/vo/Culture.java
+                    
+                    java/com/multi/mvc/kakao/service/KakaoService.java
+                    
+                    
+                    resources/mappers/culture/culture-mappers.xml
+                    
+                    resources/webapp/WEB-INF/views/culture/cultureList.jsp
+                    
+                    resources/webapp/WEB-INF/views/culture/cultureDetail.jsp
+                    
+                    resources/webapp/WEB-INF/views/member/wishList.jsp
