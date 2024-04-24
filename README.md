@@ -6,17 +6,19 @@
 프로젝트 내용 및 핵심 기능:
 
     1. 대상: 국내 여행을 목적으로 관련 여행 정보를 얻고자 하는 모든 사용자
-
+    
     2. 기획 의도: 최근 증가한 국내여행 수요가 증가했으며, 국내 여행을 하고자 하는 사람들은 대부분 인터넷을 통해 관련 정보를 얻으려는 경향이 있다. 이에 따라 국내여행 정보를 제공하는 웹 사이트를 제작하기로 하였다.
-
+    
     3. 핵심 기능: 문화 테마, 음식점, 레저, 공연 등의 여행 정보, 커뮤니티, 여행지도 기능 제공 
+
+    
 
 사용언어 및 기술: JAVA 17, MYSQL, MYBATIS, CSS, JAVASCRIPT, LOMBOK, SPRING FRAMEWORK, BOOTSTRAP, JQUERY, TOMCAT, ECLIPSE 등
 
+
 OPEN API : 카카오맵 API, 카카오 API, TOUR API 등
 
-프로젝트 내 역할: 
-                  프론트/백엔드/DB
+프로젝트 내 역할:  프론트/백엔드/DB
 
 프로젝트 내 구현 기능:
                   1.'문화 테마' 페이지 및 상세페이지 프론트/백엔드 기능 구현(지역별 검색 기능, 검색어 기반 검색, 페이징 기능),
@@ -39,7 +41,6 @@ OPEN API : 카카오맵 API, 카카오 API, TOUR API 등
                     java/com/multi/mvc/culture/model/vo/Culture.java
                     
                     java/com/multi/mvc/kakao/service/KakaoService.java
-                    
                     
                     resources/mappers/culture/culture-mappers.xml
                     
