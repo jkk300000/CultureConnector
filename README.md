@@ -2,61 +2,71 @@
 
 '멀티캠퍼스_문화커넥터_포트폴리오_김진경(1).pptx' 참고
 
-프로젝트 기간: 2023.12.15 ~ 2024.1.30 
+### 프로젝트 기간 
 
-프로젝트 소개: 국내 여행 정보를 제공하는 웹페이지 
+2023.12.15 ~ 2024.1.30 
 
-프로젝트 내용 및 핵심 기능:
+### 프로젝트 소개 
 
-    1. 대상: 국내 여행을 목적으로 관련 여행 정보를 얻고자 하는 모든 사용자
+국내 여행 정보를 제공하는 웹페이지 
+
+### 프로젝트 내용 및 핵심 기능
+
+1. 대상: 국내 여행을 목적으로 관련 여행 정보를 얻고자 하는 모든 사용자
+
+2. 기획 의도: 최근 증가한 국내여행 수요가 증가했으며, 국내 여행을 하고자 하는 사람들은 대부분 인터넷을 통해 관련 정보를 얻으려는 경향이 있다. 
+              이에 따라 국내여행 정보를 제공하는 웹 사이트를 제작하기로 하였다.
+
+3. 핵심 기능: 문화 테마, 음식점, 레저, 공연 등의 여행 정보, 커뮤니티, 여행지도 기능 제공 
+
     
-    2. 기획 의도: 최근 증가한 국내여행 수요가 증가했으며, 국내 여행을 하고자 하는 사람들은 대부분 인터넷을 통해 관련 정보를 얻으려는 경향이 있다. 
-                  이에 따라 국내여행 정보를 제공하는 웹 사이트를 제작하기로 하였다.
-    
-    3. 핵심 기능: 문화 테마, 음식점, 레저, 공연 등의 여행 정보, 커뮤니티, 여행지도 기능 제공 
 
-    
+### 사용언어 및 기술 
 
-사용언어 및 기술: JAVA 17, MYSQL, MYBATIS, CSS, JAVASCRIPT, LOMBOK, SPRING FRAMEWORK, BOOTSTRAP, JQUERY, TOMCAT, ECLIPSE 등
+JAVA 17, MYSQL, MYBATIS, CSS, JAVASCRIPT, LOMBOK, SPRING FRAMEWORK, BOOTSTRAP, JQUERY, TOMCAT, ECLIPSE 등
 
 
-OPEN API : 카카오맵 API, 카카오 API, TOUR API 등
+### OPEN API 
 
-프로젝트 내 역할:  프론트/백엔드/DB
+카카오맵 API, 카카오 API, TOUR API 등
 
-프로젝트 내 구현 기능:
+### 프로젝트 내 역할  
 
-                  1.'문화 테마' 페이지 및 상세페이지 프론트/백엔드 기능 구현(지역별 검색 기능, 검색어 기반 검색, 페이징 기능),
-                  
-                  2. 체크박스 검색 기능
-                  
-                  3. 카카오맵 api를 이용한 주소지 위치 표시 기능, 카카오 api를 이용한 공유 기능, 카카오 로그인 기능
-                  
-                  4. 마이페이지(북마크 기능) 구현
-                 
+프론트/백엔드/DB
 
-                    작성 코드:
+### 프로젝트 내 구현 기능
 
-                    java/com/multi/mvc/culture/controller/CultureController.java
-                    
-                    java/com/multi/mvc/culture/model/mapper/CultureMapper.java
-                    
-                    java/com/multi/mvc/culture/model/service/Service/CultureService.java
-                    
-                    java/com/multi/mvc/culture/model/vo/Culture.java
-                    
-                    java/com/multi/mvc/kakao/service/KakaoService.java
-                    
-                    resources/mappers/culture/culture-mappers.xml
-                    
-                    webapp/WEB-INF/views/culture/cultureList.jsp
-                    
-                    webapp/WEB-INF/views/culture/cultureDetail.jsp
-                    
-                    webapp/WEB-INF/views/member/wishList.jsp
+1.'문화 테마' 페이지 및 상세페이지 프론트/백엔드 기능 구현(지역별 검색 기능, 검색어 기반 검색, 페이징 기능),
+
+2. 체크박스 검색 기능
+
+3. 카카오맵 api를 이용한 주소지 위치 표시 기능, 카카오 api를 이용한 공유 기능, 카카오 로그인 기능
+
+4. 마이페이지(북마크 기능) 구현
 
 
-프로젝트 리뷰 : 
+작성 코드:
+
+java/com/multi/mvc/culture/controller/CultureController.java
+
+java/com/multi/mvc/culture/model/mapper/CultureMapper.java
+
+java/com/multi/mvc/culture/model/service/Service/CultureService.java
+
+java/com/multi/mvc/culture/model/vo/Culture.java
+
+java/com/multi/mvc/kakao/service/KakaoService.java
+
+resources/mappers/culture/culture-mappers.xml
+
+webapp/WEB-INF/views/culture/cultureList.jsp
+
+webapp/WEB-INF/views/culture/cultureDetail.jsp
+
+webapp/WEB-INF/views/member/wishList.jsp
+
+
+### 프로젝트 리뷰 
 
 제가 맡았던 부분은 문화 테마 정보를 제공하는 페이지입니다. 
 
